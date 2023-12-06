@@ -1,6 +1,29 @@
 export interface studentsDTO {
-    readonly name: String,
-    readonly age: Number,
-    readonly city: String,
-    readonly initial: String, 
+  fname: String;
+
+  mail: String;
+
+  phoneNumber: String;
+
+  website: String;
+
+  contactName: String;
+
+  contactMobile: String;
+
+  contactMail: String;
+
+  notes: String;
+
+  type: String;
+
+  category: String;
+
+  commissionPercentage: Number;
+
+  ActiveFrom: Date;
+
+  criticalAccount: [String];
+
+  PaymentOptions: String;
 }

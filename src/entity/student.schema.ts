@@ -1,8 +1,31 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 export const studentSchema = new mongoose.Schema({
-  name: String,
-  age: Number,
-  city: String,
-  initial: String,
+  fname: String,
+
+  mail: String,
+
+  phoneNumber: String,
+
+  website: String,
+
+  contactName: String,
+
+  contactMobile: String,
+
+  contactMail: String,
+
+  notes: String,
+
+  type: String,
+
+  category: String,
+
+  commissionPercentage: Number,
+
+  ActiveFrom: Date,
+
+  criticalAccount:String,
+
+  PaymentOptions: String,
 });
