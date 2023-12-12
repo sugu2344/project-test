@@ -1,29 +1,17 @@
 export interface studentsDTO {
-  fname: String;
-
-  mail: String;
-
-  phoneNumber: String;
-
-  website: String;
-
-  contactName: String;
-
-  contactMobile: String;
-
-  contactMail: String;
-
-  notes: String;
-
-  type: String;
-
-  category: String;
-
-  commissionPercentage: Number;
-
-  ActiveFrom: Date;
-
-  criticalAccount: [String];
-
-  PaymentOptions: String;
+  name: string,
+    email: string,
+    phone:string,
+    website: string,
+    contact: string,
+    number: string,
+    another: string,
+    notes: string,
+    type: string,
+    category: string,
+    commission:Number,
+    date: Date,
+    logo: string,
+    criticalAccount: { type: [String], default: [] }
+    payment: string,
 }

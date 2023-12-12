@@ -1,22 +1,40 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put,Delete } from '@nestjs/common';
 import { StudentService } from './student.service';
 import { studentsDTO } from './DTO/STUDENTS.DTO';
 import { Student } from './interface/student.interface';
 
 @Controller('student')
 export class StudentController {
+  personsService: any;
+  StudentService: any;
   constructor(private studentService: StudentService) {}
-  @Get()
-  getstudent(): string {
+ 
+  @Get("/")
+  async getstudent(): Promise<Student[]> {
     return this.studentService.getStudents();
   }
+  
 
-  @Post()
+  @Post("/")
   async createStudent(@Body() data: studentsDTO): Promise<Student> {
   const createdStudent = await this.studentService.createStudent(data);
-  console.log(createdStudent); // Log the created student data
-  return createdStudent; // Return the created student
+  console.log(createdStudent);
+  return createdStudent; 
 }
 
+@Put(':id')
+  async update(
+    @Param('id') id: string,
+    @Body() updatedPerson: Student,
+  ): Promise<Student> {
+    return this.StudentService.update(id, updatedPerson);
+  }
+
+  @Delete(':id')
+  async delete(@Param('id') id: string): Promise<void> {
+    return this.StudentService.delete(id);
+  }
 }
-console.log( )
+
+
+

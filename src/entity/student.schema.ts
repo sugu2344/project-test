@@ -1,31 +1,20 @@
 import mongoose from 'mongoose';
 
 export const studentSchema = new mongoose.Schema({
-  fname: String,
-
-  mail: String,
-
-  phoneNumber: String,
-
+  name: String,
+  email: String,
+  phone:String,
   website: String,
-
-  contactName: String,
-
-  contactMobile: String,
-
-  contactMail: String,
-
+  contact: String,
+  number: String,
+  another: String,
   notes: String,
-
   type: String,
-
   category: String,
-
-  commissionPercentage: Number,
-
-  ActiveFrom: Date,
-
-  criticalAccount:String,
-
-  PaymentOptions: String,
-});
+  commission:Number,
+  date: Date,
+  logo: String,
+  criticalAccount: { type: [String], default: [] },
+  payment: String,
+}
+);
