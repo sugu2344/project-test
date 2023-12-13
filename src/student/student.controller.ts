@@ -24,11 +24,11 @@ export class StudentController {
     @Param('id') id: string,
     @Body() updatedPerson: Student,
   ): Promise<Student> {
-    return this.studentService.update(id, updatedPerson); // Fix the case here
+    return this.studentService.update(id, updatedPerson); 
   }
 
   @Delete(':id')
   async delete(@Param('id') id: string): Promise<void> {
-    return this.studentService.delete(id); // Fix the case here
+    return this.studentService.delete(id); 
   }
 }
